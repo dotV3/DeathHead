@@ -14,7 +14,7 @@
 - `/dh number` > Enables/Disables the head number in the lore.
 - `/dh type` > Changes the dropped head type.
 - `/dh help` > Shows the list of commands.
-- `/dh config` > Shows the current configuration set for the server. 
+- `/dh config` > Shows the current configuration set for DeathHead. 
 
 # DM me if you found any bugs/issues
 <a href="https://discord.com/users/949243866576465950" target="_blank">
