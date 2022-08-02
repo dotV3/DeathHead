@@ -6,5 +6,5 @@
 - `number` > disable or enable to show the head's number. (set to `true` by default)
 
 # Examples of configuration
-- `/dh type skul;` > Changes the dropped head to a skull.
+- `/dh type skull` > Changes the dropped head to a skull.
 - `/dh number false` > Disables the head number in the lore.
