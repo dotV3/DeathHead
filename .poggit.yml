@@ -5,4 +5,5 @@ branches:
 projects:
   DeathHead:
     path: ""
+    icon: "DeathHeadIcon.gif"
 ...
