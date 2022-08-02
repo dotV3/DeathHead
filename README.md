@@ -10,8 +10,8 @@
 - `dh.settings` Permission to edit DeathHead configurations through commands.
 
 # Commands
-- `/dh number` > Enables/Disables the head number in the lore.
 - `/dh enabled` > Enables/Disables the head dropping of the plugin. Heads won't drop if set to false.
+- `/dh number` > Enables/Disables the head number in the lore.
 - `/dh type` > Changes the dropped head type.
 - `/dh help` > Shows you the list of commands.
 
