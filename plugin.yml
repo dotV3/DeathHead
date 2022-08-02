@@ -1,0 +1,16 @@
+name: DeathHead
+main: YX-1\DeathHead\Main
+version: 1.0.0
+api: 4.0.0
+author: YX-1
+description: Drop a player head on their death.
+
+commands:
+  dh:
+    description: Edit DeathHead plugin configs.
+    permission: dh.settings
+
+permissions:
+  dh.settings:
+    default: op
+    description: Edit DeathHead config permission.
