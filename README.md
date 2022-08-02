@@ -3,8 +3,8 @@
 
 # Configuration
 - `enabled` > Enables/Disables the head dropping on death, can be set to `true` or `false`. (set to `true` by default)
-- `number` > showw the head number in the lore, can be set to `true` or `false`. (set to `true` by default)
-- `type` > set the head type to be `steve` or `skull`. (set to `steve` by default)
+- `number` > Show the head number in the lore, can be set to `true` or `false`. (set to `true` by default)
+- `type` > Set the head type to be `steve` or `skull`. (set to `steve` by default)
 
 # Permissions
 - `dh.settings` Permission to edit DeathHead configurations through commands.
