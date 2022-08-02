@@ -2,7 +2,7 @@
 - Drop a player's head on their death.
 
 # Configuration
-- `enabled` > Enables/Disables the head dropping, can be set to `true` or `false`. (set to `true` by default)
+- `enabled` > Enables/Disables the head dropping on death, can be set to `true` or `false`. (set to `true` by default)
 - `number` > showw the head number in the lore, can be set to `true` or `false`. (set to `true` by default)
 - `type` > set the head type to be `steve` or `skull`. (set to `steve` by default)
 
@@ -10,7 +10,7 @@
 - `dh.settings` Permission to edit DeathHead configurations through commands.
 
 # Commands
-- `/dh enabled` > Enables/Disables the head dropping of the plugin. Heads won't drop if set to false.
+- `/dh enabled` > Enables/Disables the head dropping on death. Heads won't drop if set to `false`.
 - `/dh number` > Enables/Disables the head number in the lore.
 - `/dh type` > Changes the dropped head type.
 - `/dh help` > Shows you the list of commands.
