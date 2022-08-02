@@ -92,6 +92,13 @@ class Main extends PluginBase implements Listener
 
         }
 
+        if (!($config->exists("enabled"))){
+
+            $config->set("enabled", "true");
+            $config->save();
+
+        }
+
 
     }
 
@@ -173,9 +180,48 @@ public function onCommand(CommandSender $sender, Command $command, string $label
 
                             break;
                         
-                        case "help":
-                             $sender->sendMessage(TextFormat::LIGHT_PURPLE."DeathHead Commands List: \n /dh number true/false -> Enables/Disables head number in the lore \n /dh type steve/skull -> Sets the Head type \n /dh help -> Shows the list of commands for DeathHead");
+                        case "enabled":
+
+                            if (isset($args[1])){
+
+                                
+
+
+                                if ($args[1] == "true" or $args[1] == "false"){
+
+                                    if($args[1] == "true"){
+                                        $config->set("enabled", "true");
+                                        $config->save();
+                                        $sender->sendMessage(TextFormat::GREEN.TextFormat::BOLD."Successfully Enabled the head dropping. \n Enabled: " . TextFormat::LIGHT_PURPLE . "true");
+                                    }else{
+                                        $config->set("enabled", "false");
+                                        $config->save();
+                                        $sender->sendMessage(TextFormat::GREEN.TextFormat::BOLD."Successfully Disabled the head dropping. \n Enabled: " . TextFormat::LIGHT_PURPLE . "false");
+                                    }
+
+
+
+                                }else{
+                                    $sender->sendMessage(TextFormat::RED."Enabled config can only be set to true/false \n Example: /dh enabled true");
+                                }
+                            }
+
                             break;
+                        
+                        case "help":
+                             $sender->sendMessage(TextFormat::LIGHT_PURPLE."DeathHead Commands List: \n /dh enabled true/false -> Enables/Disables the head dropping on death. \n /dh number true/false -> Enables/Disables head number in the lore \n /dh type steve/skull -> Sets the Head type \n /dh help -> Shows the list of commands for DeathHead");
+                            break;
+                        
+                            case "config":
+
+                                $dhenabled = $config->get("enabled");
+                                $dhnumber = $config->get("number");
+                                $dhtype = $config->get("type");
+
+                                $sender->sendMessage("===== \n" . TextFormat::GREEN . "Enabled: \n" . TextFormat::BOLD . TextFormat::LIGHT_PURPLE . $dhenabled . TextFormat::RESET . TextFormat::GREEN . "\n" . "Number: \n" . TextFormat::BOLD . TextFormat::LIGHT_PURPLE . $dhnumber . TextFormat::RESET . TextFormat::GREEN . "\n" . "Type: \n" . TextFormat::BOLD . TextFormat::LIGHT_PURPLE . $dhtype . TextFormat::RESET . "\n" . "=====");
+                                
+                                
+                                break;
 
 
 
@@ -209,6 +255,16 @@ public function onCommand(CommandSender $sender, Command $command, string $label
         $pname = $player->getName();
 
         // CHECKERS FOR CONFIG
+
+
+        if ($config->exists("enabled")){
+
+            $dhenabled = $config->get("enabled");
+            if($dhenabled == "false"){
+                return;
+            }
+
+        }
 
         if ($config->exists("head")){
 
