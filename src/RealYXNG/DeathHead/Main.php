@@ -69,26 +69,26 @@ class Main extends PluginBase implements Listener
 
 
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
+        $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         
-        if (!($this->config->exists("head"))){
+        if (!($config->exists("head"))){
 
-            $this->config->set("head", (int)0);
-            $this->config->save();
-
-        }
-
-        if (!($this->config->exists("type"))){
-
-            $this->config->set("type", "steve");
-            $this->config->save();
+            $config->set("head", (int)0);
+            $config->save();
 
         }
 
-        if (!($this->config->exists("number"))){
+        if (!($config->exists("type"))){
 
-            $this->config->set("number", "true");
-            $this->config->save();
+            $config->set("type", "steve");
+            $config->save();
+
+        }
+
+        if (!($config->exists("number"))){
+
+            $config->set("number", "true");
+            $config->save();
 
         }
 
@@ -98,7 +98,7 @@ class Main extends PluginBase implements Listener
 public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool 
  {
 
-    $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
+    $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 
 
     switch ($command->getName()) {
@@ -126,12 +126,12 @@ public function onCommand(CommandSender $sender, Command $command, string $label
                                 if ($args[1] == "steve" or $args[1] == "skull"){
 
                                     if($args[1] == "steve"){
-                                        $this->config->set("type", "steve");
-                                        $this->config->save();
+                                        $config->set("type", "steve");
+                                        $config->save();
                                         $sender->sendMessage(TextFormat::GREEN.TextFormat::BOLD."Successfully set Head Type to \n" . TextFormat::LIGHT_PURPLE . "Steve");
                                     }else{
-                                        $this->config->set("type", "skull");
-                                        $this->config->save();
+                                        $config->set("type", "skull");
+                                        $config->save();
                                         $sender->sendMessage(TextFormat::GREEN.TextFormat::BOLD."Successfully set Head Type to \n" . TextFormat::LIGHT_PURPLE . "Skull");
                                     }
 
@@ -155,12 +155,12 @@ public function onCommand(CommandSender $sender, Command $command, string $label
                                 if ($args[1] == "true" or $args[1] == "false"){
 
                                     if($args[1] == "true"){
-                                        $this->config->set("number", "true");
-                                        $this->config->save();
+                                        $config->set("number", "true");
+                                        $config->save();
                                         $sender->sendMessage(TextFormat::GREEN.TextFormat::BOLD."Successfully set Head Lore Number to \n" . TextFormat::LIGHT_PURPLE . "True");
                                     }else{
-                                        $this->config->set("number", "false");
-                                        $this->config->save();
+                                        $config->set("number", "false");
+                                        $config->save();
                                         $sender->sendMessage(TextFormat::GREEN.TextFormat::BOLD."Successfully set Head Lore Number to \n" . TextFormat::LIGHT_PURPLE . "False");
                                     }
 
@@ -204,26 +204,26 @@ public function onCommand(CommandSender $sender, Command $command, string $label
     public function onDeath(PlayerDeathEvent $event)
     {
 
-        $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
+        $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
         $player = $event->getPlayer();
         $pname = $player->getName();
 
         // CHECKERS FOR CONFIG
 
-        if ($this->config->exists("head")){
+        if ($config->exists("head")){
 
-            $headno = (int)$this->config->get("head") + 1;
-            $this->config->set("head", (int)$headno);
-            $this->config->save();
+            $headno = (int)$config->get("head") + 1;
+            $config->set("head", (int)$headno);
+            $config->save();
 
         }else{
             $this->getLogger()->info("[DeathHead] TYPE does not exist in config or corrupted. (Set it to 0)");
             return;
         }
 
-        if($this->config->exists("type")){
+        if($config->exists("type")){
 
-            $type = $this->config->get("type");
+            $type = $config->get("type");
             //TYPE IS STEVE
             if($type == "steve"){
 
@@ -253,9 +253,9 @@ public function onCommand(CommandSender $sender, Command $command, string $label
             return;
         }
 
-        if($this->config->exists("number")){
+        if($config->exists("number")){
 
-            $lorenumber = $this->config->get("number");
+            $lorenumber = $config->get("number");
             //NUMBER IN LORE IS SET TO TRUE
             if($lorenumber == "true"){
 
