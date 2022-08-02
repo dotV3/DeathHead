@@ -1,8 +1,8 @@
 name: DeathHead
-main: YX-1\DeathHead\Main
+main: RealYXNG\DeathHead\Main
 version: 1.0.0
 api: 4.0.0
-author: YX-1
+author: RealYXNG
 description: Drop a player head on their death.
 
 commands:
