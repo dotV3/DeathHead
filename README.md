@@ -1,4 +1,4 @@
-<a href="https://poggit.pmmp.io/p/DeathHead"><img src="https://poggit.pmmp.io/shield.api/DeathHead"></a>
+<a href="https://poggit.pmmp.io/p/DeathHead"><img src="https://poggit.pmmp.io/shield.state/DeathHead"></a>
 # Description
 - Drop a player's head on their death.
 
