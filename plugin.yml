@@ -8,7 +8,7 @@ description: Drop a player head on their death.
 commands:
   dh:
     description: Edit DeathHead plugin configs.
-    permission: dh.settings
+    permission: deathhead.settings
 
 permissions:
   deathhead.settings:
