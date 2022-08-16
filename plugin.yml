@@ -11,6 +11,6 @@ commands:
     permission: dh.settings
 
 permissions:
-  dh.settings:
+  deathhead.settings:
     default: op
     description: Edit DeathHead config permission.
