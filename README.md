@@ -8,7 +8,7 @@
 - `type` > Set the head type to be `steve` or `skull`. (set to `steve` by default)
 
 # Permissions
-- `dh.settings` Permission to edit DeathHead configurations through commands.
+- `deathhead.settings` Permission to edit DeathHead configurations through commands.
 
 # Commands
 - `/dh enabled` > Enables/Disables the head dropping on death. Heads won't drop if set to `false`.
