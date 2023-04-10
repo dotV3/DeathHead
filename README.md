@@ -18,7 +18,7 @@
 - `/dh config` > Shows the current configuration set for DeathHead. 
 
 # DM me if you found any bugs/issues
-<a href="https://discord.com/users/949243866576465950" target="_blank">
-	<img width="50%" align="center" alt="Discord Status" src="https://lanyard.cnrad.dev/api/949243866576465950">
+<a href="https://discord.com/users/106893921476456448" target="_blank">
+	<img width="50%" align="center" alt="Discord Status" src="https://lanyard.cnrad.dev/api/106893921476456448">
 </a>
 
